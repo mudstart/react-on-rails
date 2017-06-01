@@ -289,3 +289,41 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 61ms (Views: 36.2ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT GET_LOCK('4779491252233051725', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (25.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateLifts (20170601152152)
+  [1m[35m (110.0ms)[0m  [1m[35mCREATE TABLE `lifts` (`id` int AUTO_INCREMENT PRIMARY KEY, `date` date, `liftname` varchar(255), `ismetric` tinyint(1), `weigthlifted` int, `repsperformed` int, `onerm` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170601152152')[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('4779491252233051725')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (4.5ms)[0m  [1m[35mSHOW CREATE TABLE `lifts`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'lifts'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'liftprogress_development'
+  AND fk.table_name = 'lifts'
+[0m
+Started GET "/" for 172.24.0.1 at 2017-06-01 15:24:26 +0000
+Cannot render console from 172.24.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO `lifts` (`date`, `liftname`, `ismetric`, `weigthlifted`, `repsperformed`, `onerm`, `created_at`, `updated_at`) VALUES ('2017-06-01', 'Bench Press', 0, 220, 1, 1, '2017-06-01 15:36:02', '2017-06-01 15:36:02')[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLift Load (1.0ms)[0m  [1m[34mSELECT `lifts`.* FROM `lifts`[0m
