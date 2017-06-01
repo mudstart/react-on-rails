@@ -1,0 +1,23 @@
+I"˜(function() {
+  this.Lifts = React.createClass({
+    getInitialState: function() {
+      return {
+        lifts: this.props.data
+      };
+    },
+    getDefaultProps: function() {
+      return {
+        lifts: []
+      };
+    },
+    render: function() {
+      return React.DOM.div({
+        className: 'lifts'
+      }, React.DOM.h1({
+        className: 'title'
+      }, 'Lifts'));
+    }
+  });
+
+}).call(this);
+:ET

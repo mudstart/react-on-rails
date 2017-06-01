@@ -1,0 +1,13 @@
+I"s(function() {
+  this.Lifts = React.createClass({
+    render: function() {
+      React.DOM.tr(null, this.props.lift.data);
+      React.DOM.td(null, this.props.lift.liftname);
+      React.DOM.td(null, this.props.lift.weigthlifted);
+      React.DOM.td(null, this.props.lift.repsperformed);
+      return React.DOM.td(null, this.props.lift.onerm);
+    }
+  });
+
+}).call(this);
+:ET

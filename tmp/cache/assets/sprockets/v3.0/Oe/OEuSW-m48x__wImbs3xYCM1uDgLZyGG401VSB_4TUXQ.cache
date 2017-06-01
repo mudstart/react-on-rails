@@ -1,0 +1,15 @@
+I"ê(function() {
+  this.lifts = React.createClass;
+
+  ({
+    render: function() {
+      return React.DOM.div({
+        className: 'lifts'
+      }, React.DOM.h1({
+        className: 'title'
+      }, 'Lifts'));
+    }
+  });
+
+}).call(this);
+:ET
